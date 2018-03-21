@@ -1,0 +1,13 @@
+---
+- hosts: all
+
+  tasks:
+
+  - name: Ensure apache is present
+    yum:
+      name: httpd
+      state: latest
+      update_cache: yes
+    become: true
+
+
