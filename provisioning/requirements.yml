@@ -1,7 +1,17 @@
 ---
 
 - src: https://github.com/joalon/strongswan-vpn/
-  version: master
   name: strongswan-vpn
 
+- src: https://github.com/joalon/dhcp/
+  name: dhcp
+
+- src: https://github.com/joalon/yum/
+  name: yum
+
+- src: https://github.com/joalon/bind-dns/
+  name: bind-dns
+
+- src: https://github.com/joalon/setup-and-hardening/
+  name: setup-and-hardening
 

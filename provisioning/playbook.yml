@@ -1,6 +1,21 @@
 ---
-- hosts: all
+- hosts: vpn
   roles:
-  - { role: strongswan-vpn, hostname: "vpn.joalon.se" }
+  - { role: setup-and-hardening, hostname: "vpn.joalon.se" }
+  - { role: strongswan-vpn }
 
+- hosts: yum
+  roles:
+  - { role: setup-and-hardening, hostname: "yum.joalon.se" }
+  - { role: yum }
+
+- hosts: dns
+  roles:
+  - { role: setup-and-hardening, hostname: "dns.joalon.se" }
+  - { role: bind-dns, zone: "joalon.se" }
+
+- hosts: dhcp
+  roles:
+  - { role: setup-and-hardening, hostname: "dhcp.joalon.se" }
+  - { role: dhcp, address-range: "10.10.10.0/24" }
 
