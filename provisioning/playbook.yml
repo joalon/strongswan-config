@@ -1,7 +1,6 @@
 ---
-- hosts: vpn
+- hosts: all
   roles:
-  - { role: vpn, hostname: "vpn.joalon.se" }
-
+  - { role: strongswan-vpn, hostname: "vpn.joalon.se" }
 
 
