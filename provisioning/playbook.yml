@@ -1,0 +1,7 @@
+---
+- hosts: vpn
+  roles:
+  - { role: vpn, hostname: "vpn.joalon.se" }
+
+
+

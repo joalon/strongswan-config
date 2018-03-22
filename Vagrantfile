@@ -9,29 +9,24 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "playbooks/apache.yml"
+    ansible.playbook = "playbooks/vpn-environment.yml"
   end
 
 
-
-
-  config.vm.define "ipsec-gw" do |gw|
-
-
+  config.vm.define "gw" do |gw|
+	gw.hostname = "vpn.joalon.se"
+	gw.network :public_network, ip: "192.168.1.102"
   end
-
 
   config.vm.define "dns" do |dns|
-
-
+        dns.hostname = "dns.joalon.se"
+	dns.network :public_network, ip: "192.168.1.103"
   end
 
   config.vm.define "dhcp" do |dhcp|
-
-
+        dhcp.hostname = "dhcp.joalon.se"
+        dhcp.network :public_network, ip: "192.168.1.101"
   end
-
-
 
   # config.vm.network "forwarded_port", guest: 80, host: 8080
 

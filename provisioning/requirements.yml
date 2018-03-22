@@ -1,0 +1,7 @@
+---
+
+- src: https://github.com/joalon/strongswan-vpn/
+  version: master
+  name: strongswan-vpn
+
+
