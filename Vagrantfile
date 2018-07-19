@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "1024"
+    vb.gui = true
   end
 
   config.vm.provision "ansible" do |ansible|
@@ -40,7 +41,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "yum" do |yum|
 	yum.vm.hostname = "yum.joalon.se"
 	yum.vm.network :private_network, ip: "192.168.200.104"
-	yum.vm.synced_folder "/mnt/d/repos", "/mnt/repo"
+	#yum.vm.synced_folder "/mnt/d/repos", "/mnt/repo"
   end
 
   # config.vm.network "forwarded_port", guest: 80, host: 8080
